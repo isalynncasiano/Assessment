@@ -1,0 +1,69 @@
+{
+  "start": "2022-12-12T12:27:57.199Z",
+  "end": "2022-12-12T12:28:11.880Z",
+  "capabilities": {
+    "acceptInsecureCerts": true,
+    "browserName": "chrome",
+    "browserVersion": "108.0.5359.99",
+    "chrome": {
+      "chromedriverVersion": "108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016})",
+      "userDataDir": "C:\\Users\\ASUSTU~1\\AppData\\Local\\Temp\\scoped_dir7540_820216440"
+    },
+    "goog:chromeOptions": {
+      "debuggerAddress": "localhost:54785"
+    },
+    "networkConnectionEnabled": false,
+    "pageLoadStrategy": "normal",
+    "platformName": "windows",
+    "proxy": {},
+    "setWindowRect": true,
+    "strictFileInteractability": false,
+    "timeouts": {
+      "implicit": 0,
+      "pageLoad": 300000,
+      "script": 30000
+    },
+    "unhandledPromptBehavior": "dismiss and notify",
+    "webauthn:extension:credBlob": true,
+    "webauthn:extension:largeBlob": true,
+    "webauthn:virtualAuthenticators": true,
+    "sessionId": "9a8b4d714fe5e18f5a3b46328e3ec77d"
+  },
+  "host": "localhost",
+  "port": 9515,
+  "baseUrl": "http://localhost",
+  "framework": "mocha",
+  "duration": 14681,
+  "suites": [
+    {
+      "title": "My Login application",
+      "duration": 14638,
+      "start": "2022-12-12T12:27:57.206Z",
+      "end": "2022-12-12T12:28:11.844Z",
+      "tests": [
+        {
+          "title": "should login with valid credentials",
+          "start": "2022-12-12T12:27:57.207Z",
+          "end": "2022-12-12T12:28:11.843Z",
+          "duration": 14636,
+          "state": "failed",
+          "screenshots": [],
+          "error": {
+            "type": "unknown error",
+            "message": "unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=108.0.5359.99)",
+            "stack": "unknown error: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=108.0.5359.99)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async Context.<anonymous> (file:///D:/L/Tech/Repositories/Assessment/test/specs/example.e2e.js:6:9)"
+          }
+        }
+      ],
+      "hooks": []
+    }
+  ],
+  "specs": [
+    "file:///D:/L/Tech/Repositories/Assessment/test/specs/example.e2e.js"
+  ],
+  "state": {
+    "passed": 0,
+    "failed": 1,
+    "skipped": 0
+  }
+}

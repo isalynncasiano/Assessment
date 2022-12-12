@@ -1,0 +1,72 @@
+{
+  "start": "2022-12-12T13:16:39.629Z",
+  "end": "2022-12-12T13:16:46.263Z",
+  "capabilities": {
+    "acceptInsecureCerts": true,
+    "browserName": "chrome",
+    "browserVersion": "108.0.5359.99",
+    "chrome": {
+      "chromedriverVersion": "108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016})",
+      "userDataDir": "C:\\Users\\ASUSTU~1\\AppData\\Local\\Temp\\scoped_dir8308_989437493"
+    },
+    "goog:chromeOptions": {
+      "debuggerAddress": "localhost:58026"
+    },
+    "networkConnectionEnabled": false,
+    "pageLoadStrategy": "normal",
+    "platformName": "windows",
+    "proxy": {},
+    "setWindowRect": true,
+    "strictFileInteractability": false,
+    "timeouts": {
+      "implicit": 0,
+      "pageLoad": 300000,
+      "script": 30000
+    },
+    "unhandledPromptBehavior": "dismiss and notify",
+    "webauthn:extension:credBlob": true,
+    "webauthn:extension:largeBlob": true,
+    "webauthn:virtualAuthenticators": true,
+    "sessionId": "b04063780f7f95811616b6a1e6974a74"
+  },
+  "host": "localhost",
+  "port": 9515,
+  "baseUrl": "http://localhost",
+  "framework": "mocha",
+  "duration": 6634,
+  "suites": [
+    {
+      "title": "Isa Lynn Casiano - Planit Technical Assessment",
+      "duration": 6580,
+      "start": "2022-12-12T13:16:39.634Z",
+      "end": "2022-12-12T13:16:46.214Z",
+      "tests": [
+        {
+          "title": "Test Case 1",
+          "start": "2022-12-12T13:16:41.848Z",
+          "end": "2022-12-12T13:16:46.213Z",
+          "duration": 4365,
+          "state": "passed",
+          "screenshots": []
+        }
+      ],
+      "hooks": [
+        {
+          "start": "2022-12-12T13:16:39.634Z",
+          "end": "2022-12-12T13:16:41.848Z",
+          "duration": 2214,
+          "title": "\"before all\" hook for Isa Lynn Casiano - Planit Technical Assessment",
+          "associatedSuite": "Isa Lynn Casiano - Planit Technical Assessment"
+        }
+      ]
+    }
+  ],
+  "specs": [
+    "file:///D:/L/Tech/Repositories/Planit/Assessment/test/specs/example.e2e.js"
+  ],
+  "state": {
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0
+  }
+}
