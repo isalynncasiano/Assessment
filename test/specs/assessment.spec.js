@@ -3,6 +3,7 @@ import ContactPage from '../pageobjects/contact.page.js';
 import HomePage from '../pageobjects/home.page.js';
 import Navigation from '../pageobjects/navigation.js';
 import OrderpPage from '../pageobjects/order.page.js';
+import CartPage from '../pageobjects/cart.page.js';
 
 describe('Isa Lynn Casiano - Planit Technical Assessment', () => {
     before(async () => {
@@ -56,14 +57,16 @@ describe('Isa Lynn Casiano - Planit Technical Assessment', () => {
     it('Test Case 3', async () => {
 
         let orderContext = [
-            { itemName: 'Stuffed Frog', qty: '2' },
-            { itemName: 'Fluffy Bunny', qty: '5' },
-            { itemName: 'Valentine Bear', qty: '3' }
+            { itemName: 'Stuffed Frog', qty: 2, price: '10.99' },
+            { itemName: 'Fluffy Bunny', qty: 5, price: '9.99' },
+            { itemName: 'Valentine Bear', qty: 3, price: '14.99' }
         ]
 
         await Navigation.navigateToMenu(Constants.NAV_SHOP);
-        await OrderpPage.buyItem('Stuffed Frog', 2);
-        await OrderpPage.buyItem('Fluffy Bunny', 5);
-        await OrderpPage.buyItem('Valentine Bear', 3);
+        await OrderpPage.buyItems(orderContext);
+        await Navigation.navigateToMenu(Constants.NAV_CART);
+        await CartPage.verifySubtotals(orderContext);
+        await CartPage.verifyPrices(orderContext);
+        await CartPage.verifyTotal(orderContext);
     });
 })

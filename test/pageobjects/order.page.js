@@ -4,11 +4,18 @@ import Constants from './constants.js';
 
 class OrderPage extends Page {
 
-    async buyButton(itemName){
+    async buyButton(itemName) {
         return await $(`//a[contains(@class,'btn') and text()='Buy' and parent::*//preceding-sibling::h4[text()='${itemName}']]`);
     }
-    
-    async buyItem(itemName, qty){
+
+
+    async buyItems(orderContext) {
+        for (const order in orderContext) {
+            await this.#buyItem(orderContext[order].itemName, orderContext[order].qty)
+        }
+    }
+
+    async #buyItem(itemName, qty) {
         for (let i = 0; i < qty; i++) {
             await this.clickElement(await this.buyButton(itemName));
             console.log(`Added ${itemName} to cart`);

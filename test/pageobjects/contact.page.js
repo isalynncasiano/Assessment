@@ -21,7 +21,7 @@ class ContactPage extends Page {
     async sumbitFeedback() {
         let modal = await this.modalHeader('Sending Feedback');
         await this.clickElement(await this.button(Constants.SUBMIT));
-        await modal.waitForDisplayed({ reverse: true});
+        await modal.waitForDisplayed({ reverse: true });
     }
 
     async verifyRequiredFieldErrors(isDisplayed = true) {

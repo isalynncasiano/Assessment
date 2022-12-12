@@ -3,6 +3,7 @@ export default class Constants {
     static get NAV_HOME() { return 'nav-home'; }
     static get NAV_CONTACT() { return 'nav-contact'; }
     static get NAV_SHOP() { return 'nav-shop'; }
+    static get NAV_CART() { return 'nav-cart'; }
 
     //Contact
     static get FORENAME() { return 'Forename'; }

@@ -4,7 +4,7 @@ import Page from './page.js';
 class Navigation extends Page {
 
     async navigationMenu(menu) {
-        return await $(`//ul[@class="nav"]//li[@id="${menu}"]`);
+        return await $(`//ul[contains(@class, "nav")]//li[@id="${menu}"]//a`);
     }
 
     async navigateToMenu(menu) {
