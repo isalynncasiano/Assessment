@@ -4,6 +4,14 @@ export default class Page {
         return await $(`//a[contains(@class,'btn') and text()='${buttonName}']`);
     }
 
+    async textbox(inputElementId) {
+        return await $(`//input[@id='${inputElementId}']`);
+    }
+
+    async textarea(textareaElementId) {
+        return await $(`//textarea[@id='${textareaElementId}']`);
+    }
+
     async open(path) {
         try {
             await browser.maximizeWindow()
@@ -16,6 +24,7 @@ export default class Page {
 
     async clickElement(element) {
         try {
+            await element.waitForClickable();
             await element.click();
             console.log('Element is clicked.');
         } catch (error) {
@@ -24,7 +33,13 @@ export default class Page {
     }
 
     async enterValue(element, value) {
-        await element.setValue(value);
-        console.log(`${value} is entered`);
+        try {
+            await element.waitForClickable();
+            await element.setValue(value);
+            console.log(`"${value}" is entered`);
+        } catch (error) {
+            throw new Error(error);
+        }
+
     }
 }

@@ -1,30 +1,23 @@
-export default class Page {
 
-    async button(buttonName) {
-        return await $(`//a[contains(@class,'btn') and text()='${buttonName}']`);
+import Page from './page.js';
+
+class Navigation extends Page {
+
+    async navigationMenu(menu) {
+        return await $(`//ul[@class="nav"]//li[@id="${menu}"]`);
     }
 
-    async open(path) {
-        try {
-            await browser.maximizeWindow()
-            console.log(`Launching ${path}`)
-            return browser.url(path)
-        } catch (error) {
-            throw new Error(error);
-        }
+    async navigateToMenu(menu) {
+        let navMenu = await this.navigationMenu(menu);
+        await navMenu.waitForClickable();
+        await this.clickElement(navMenu);
+        console.log(`Navigated to ${menu}`);
     }
 
-    async clickElement(element) {
-        try {
-            await element.click();
-            console.log('Element is clicked.');
-        } catch (error) {
-            throw new Error(error);
-        }
+    async verifyPageIsNavigated(page) {
+        await expect(browser).toHaveUrlContaining(page);
+        console.log(`Navigated to ${page} page.`);
     }
 
-    async enterValue(element, value) {
-        await element.setValue(value);
-        console.log(`${value} is entered`);
-    }
 }
+export default new Navigation();
